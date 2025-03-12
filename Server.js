@@ -5,8 +5,10 @@ const bcj = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const UserModel = require("./Models/UserDetails");
 const Passport = require("./middleware/Passport");
+// mongodb://bhanukundarapu55:9M1t1O7MJisMNuI7@cluster0.7i8o3u.mongodb.net/?ssl=true&replicaSet=atlas-7i8o3u-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0
+// mongodb+srv://bhanukundarapu55:9M1t1O7MJisMNuI7@cluster0.lb6me.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 mongoose
-	.connect("mongodb://127.0.0.1:27017/Enormous")
+	.connect("mongodb+srv://bhanukundarapu55:9M1t1O7MJisMNuI7@cluster0.lb6me.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 	.then(() => {
 		console.log("database is connected Successfully");
 	})
@@ -105,3 +107,7 @@ app.get("/profile", Passport, async (req, res) => {
 app.listen(9090, () => {
 	console.log("server is running on port 3000");
 });
+
+
+
+
